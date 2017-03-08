@@ -1,0 +1,247 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Merriweather');
+
+html, body
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+	background-color: #f9ede0;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 67.5%;
+}
+
+h1
+{
+	font-size: 3.5rem;
+}
+
+h2
+{
+	font-size: 3rem;
+}
+
+h3
+{
+	font-size: 2.5rem;
+}
+
+h4
+{
+	font-size: 2rem;
+}
+
+h5
+{
+	font-size: 1.6rem;
+}
+
+h6
+{
+	font-size: 1rem
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  font-family: 'Merriweather', serif;
+}
+
+.flexbox-parent
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container
+{
+  width: 100%;
+  height: 75%;
+	overflow: hidden;
+	position: relative;
+}
+
+.header-container img
+{
+	width: 100%;
+}
+
+.header-title
+{
+	font-family: 'Indie Flower', cursive;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+
+.header-title img
+{
+	width: 66.66%;
+}
+
+.nav-container
+{
+  width: 100%;
+  height: 5%;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.nav-container li
+{
+	display: inline-block;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+.content-container
+{
+	width: 90%;
+	margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 0px;
+	font-size: 1.4rem;
+	line-height: 1.5;
+}
+
+.content-container h4
+{
+	margin: 1rem;
+	padding: 1rem;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.content-container ul, li, p
+{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 1.6rem;
+}
+
+.about-me-section
+{
+  order: 1;
+  flex: 2 2 0px;
+  padding: 1rem;
+	margin: 1rem;
+}
+
+.about-me-section p, .about-me-section ul
+{
+  padding: 1rem;
+  margin: 1rem;
+	list-style-type: circle;
+}
+
+.about-me-section li
+{
+	margin: 1rem;
+  margin-left: 3rem;
+}
+
+.about-me-section img
+{
+	max-width: 100%;
+	margin: 1rem;
+}
+
+.sidebar-container
+{
+  order: 2;
+  flex: 1 1 0px;
+	margin: 1rem;
+  padding: 1rem;
+	font-size: 1.6rem;
+}
+
+.sidebar-container h5
+{
+  padding: 0;
+  margin: 0;
+	margin-right: 1rem;
+	text-align: right;
+}
+
+.sidebar-photo-container
+{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: auto;
+	float: right;
+}
+
+.sidebar-photo-container img
+{
+	max-width: 100%;
+	margin: 1rem;
+}
+
+.footer-container
+{
+	width: 100%;
+	height: 5%;
+}
+
+.social-media-container
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 50%;
+	margin: auto;
+}
+
+.social-media-container img
+{
+	height: 5rem;
+	padding: 1rem;
+}
