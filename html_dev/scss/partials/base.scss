@@ -1,0 +1,72 @@
+// Media queries for responsive layout
+$min-mobile-size: 240px;
+$max-mobile-size: 767px;
+$min-tablet-size: 768px;
+$max-tablet-size: 1024px;
+$min-landscape-tablet-size: 1025px;
+$max-landscape-tablet-size: 1366px;
+$min-tablet-nexus-size: 600px;
+$max-tablet-nexus-size: 960px;
+
+@mixin displayFlex($flexflow)
+{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: $flexflow;
+  flex-flow: $flexflow;
+}
+
+/* Mobile phones */
+@mixin responsiveLayoutMobile
+{
+  @media (min-width: #{$min-mobile-size})
+    and (max-width: #{$max-mobile-size})
+    and (min-height: #{$min-mobile-size})
+    and (max-height: #{$max-mobile-size})
+    and (-webkit-min-device-pixel-ratio: 1)
+    {
+      @content;
+    }
+}
+
+/* Normal tablets */
+@mixin responsiveLayoutTablet
+{
+  @media (min-width: #{$min-tablet-size})
+    and (max-width: #{$max-tablet-size})
+    and (min-height: #{$min-tablet-size})
+    and (max-height: #{$max-tablet-size})
+    and (-webkit-min-device-pixel-ratio: 1)
+  {
+    @content;
+  }
+}
+
+/* Big tablets and tablets in landscape mode */
+@mixin responsiveLayoutBigTablet()
+{
+  @media (min-width: #{$min-tablet-size})
+    and (max-width: #{$max-landscape-tablet-size})
+    and (min-height: #{$min-tablet-size})
+    and (max-height: #{$max-landscape-tablet-size})
+    and (-webkit-min-device-pixel-ratio: 2)
+    {
+      @content;
+    }
+}
+
+/* Nexus 7 */
+@mixin responsiveLayoutNexusSeven()
+{
+  @media (min-width: #{$min-tablet-nexus-size})
+    and (max-width: #{$max-tablet-nexus-size})
+    and (min-height: #{$min-tablet-nexus-size})
+    and (max-height: #{$max-tablet-nexus-size})
+    and (-webkit-min-device-pixel-ratio: 1)
+  {
+    @content;
+  }
+}

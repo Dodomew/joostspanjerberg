@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import "partials/base";
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -95,18 +97,28 @@ h1, h2, h3, h4, h5, h6
   font-family: 'Merriweather', serif;
 }
 
-.flexbox-parent
-{
-  display: flex;
-  flex-direction: column;
-}
-
 .header-container
 {
   width: 100%;
-  height: 75%;
+  height: 768px;
 	overflow: hidden;
 	position: relative;
+}
+
+@include responsiveLayoutMobile
+{
+	.header-container
+	{
+		height: 256px;
+	}
+}
+
+@include responsiveLayoutTablet
+{
+	.header-container
+	{
+		height: 512px;
+	}
 }
 
 .header-container img
@@ -130,7 +142,7 @@ h1, h2, h3, h4, h5, h6
 .nav-container
 {
   width: 100%;
-  height: 5%;
+  height: auto;
 	text-align: center;
 	margin-bottom: 2rem;
 }
@@ -139,15 +151,20 @@ h1, h2, h3, h4, h5, h6
 {
 	display: inline-block;
 	padding: 1rem;
-	font-size: 2rem;
+	margin-right: 1rem;
+	font-size: 2.5rem;
+}
+
+.nav-container li:hover
+{
+	background-color: #D1C5B8;
 }
 
 .content-container
 {
 	width: 90%;
 	margin: auto;
-  display: flex;
-  flex-flow: row wrap;
+	@include displayFlex(row wrap);
   flex: 1 1 0px;
 	font-size: 1.4rem;
 	line-height: 1.5;
@@ -158,6 +175,22 @@ h1, h2, h3, h4, h5, h6
 	margin: 1rem;
 	padding: 1rem;
 	font-family: 'Noto Sans', sans-serif;
+}
+
+@include responsiveLayoutMobile
+{
+	.content-container h4
+	{
+		padding: 0;
+	}
+}
+
+@include responsiveLayoutTablet
+{
+	.content-container h4
+	{
+		padding: 0;
+	}
 }
 
 .content-container ul, li, p
@@ -187,6 +220,22 @@ h1, h2, h3, h4, h5, h6
   margin-left: 3rem;
 }
 
+@include responsiveLayoutMobile
+{
+	.about-me-section p, .about-me-section ul
+	{
+	  padding: 0;
+	}
+}
+
+@include responsiveLayoutTablet
+{
+	.about-me-section p, .about-me-section ul
+	{
+	  padding: 0;
+	}
+}
+
 .about-me-section img
 {
 	max-width: 100%;
@@ -207,7 +256,7 @@ h1, h2, h3, h4, h5, h6
   padding: 0;
   margin: 0;
 	margin-right: 1rem;
-	text-align: right;
+	text-align: center;
 }
 
 .sidebar-photo-container
@@ -227,8 +276,12 @@ h1, h2, h3, h4, h5, h6
 
 .footer-container
 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 	width: 100%;
 	height: 5%;
+	text-align: center;
 }
 
 .social-media-container
