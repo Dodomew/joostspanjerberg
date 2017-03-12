@@ -1,3 +1,27 @@
+<?php
+if ($_POST) {
+   // Execute code (such as database updates) here.
+
+	 $name=$_REQUEST['name'];
+	 $email=$_REQUEST['email'];
+	 $message=$_REQUEST['message'];
+	 if (($name=="")||($email=="")||($message==""))
+	 		{
+	 		//echo "Vul alsjeblieft <a href=\"\">alle velden in.</a>";
+	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=false");
+	 		}
+	 else{
+	 		$from="From: $name($email)";
+	 		$subject="SUBJECT HERE";
+	 		mail("jspanjerberg@gmail.com", $subject, $message, $from);
+	 		//echo "Email is verstuurd!";
+	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=true");
+	 		}
+
+   // Redirect to this page.
+   exit();
+}
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -42,9 +66,9 @@
 
 			<ul class="nav-menu"> <!-- Dit is je menu. Voor een nieuwe menu item, kopieer een van deze regels of tik <li>Je nieuwe Menu item</li> -->
 
-				<a href="index.html"><li>Home</li></a>
-				<a href="lessen.html"><li>Lessen</li></a>
-				<a href="contact.html"><li>Contact</li></a>
+				<a href="index.php"><li>Home</li></a>
+				<a href="lessen.php"><li>Lessen</li></a>
+				<a href="contact.php"><li>Contact</li></a>
 
 		</nav>
 
@@ -52,36 +76,7 @@
 
 				<section class="about-me-section">
 
-					<h3>Hallo! Mijn naam is Joost en ik ben gitarist. Ik treed veel op met bands en geef graag gitaarles aan anderen.</h3>
 
-					<h4>Hieronder vind je referenties over mij:
-
-						<ul>
-
-							<li>Meneer 1 : Ja, die Joost is echt een baas. Ik ben een meester in gitaar spelen geworden en kan nu altijd Wonderwall spelen wanneer nodig.</li>
-							<li>Vrouw 1: Joost heeft mijn dochter goed begeleid met het leren van de gitaar! Ze wilde eigenlijk liever op onze iPad spelen, maar we vinden dat ze wel iets nuttigs mag leren en daar heeft Joost bij geholpen.</li>
-							<li>Ikea: Wij huren Joost af en toe in voor een leuk achtergrondmuziek in de winkel. Beter dan die meuk op de radio!</li>
-
-						</ul>
-
-					</h4>
-
-					<h4>Hieronder de bands waar ik mee optreed:
-
-						<ul>
-
-							<li>Brighter Light</li>
-							<li>Mills</li>
-
-						</ul>
-
-					</h4>
-
-					<h4>Check dit vette plaatje dan (Dit kan eventueel kleiner):
-
-						<img src="images/DSCF8056.JPG" alt="Joost teaching guitar">
-
-					</h4>
 
 				</section>
 
@@ -99,40 +94,52 @@
 					</section>
 
 					<?php
-					$action=$_REQUEST['action'];
-					if ($action=="")    /* display the contact form */
+
+					$safeGet = htmlspecialchars($_GET["v"]);
+
+					if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
 					    {
+
+								if ($safeGet == "false")
+								{
+									echo "<strong>Vul alsjeblieft alle velden in.</strong>";
+								}
 					    ?>
-					    <form  action="" method="POST" enctype="multipart/form-data">
+
+						<section class="contact-form" id="contact-me-form">
+
+					    <form action="index.php#contact-me-form" method="POST" enctype="multipart/form-data">
 					    <input type="hidden" name="action" value="submit">
-					    Your name:<br>
+
+					    Wat is je naam?<br>
 					    <input name="name" type="text" value="" size="30"/><br>
-					    Your email:<br>
-					    <input name="email" type="text" value="" size="30"/><br>
-					    Your message:<br>
+
+					    Wat is je emailadres?<br>
+					    <input name="email" type="email" value="" size="30"/><br>
+
+					    Wat kan ik voor je doen?<br>
 					    <textarea name="message" rows="7" cols="30"></textarea><br>
-					    <input type="submit" value="Send email"/>
+					    <input type="submit" value="Stuur mij een mail!" class="contact-form-submit"/>
 					    </form>
+
+
 					    <?php
 					    }
 					else                /* send the submitted data */
 					    {
-					    $name=$_REQUEST['name'];
-					    $email=$_REQUEST['email'];
-					    $message=$_REQUEST['message'];
-					    if (($name=="")||($email=="")||($message==""))
-					        {
-					        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
-					        }
-					    else{
-					        $from="From: $name<$email>\r\nReturn-path: $email";
-					        $subject="Message sent using your contact form";
-					        mail("dodomew@gmail.com", $subject, $message, $from);
-					        echo "Email sent!";
-					        }
+
+									if($safeGet == "true")
+									{
+										echo "<strong>Email is verstuurd!</strong>";
+									}
+									else {
+										echo "<strong>Er is iets fout gegaan! Vul het formulier alsjeblieft opnieuw in.</strong>";
+									}
+
 					    }
 					?>
 
+					</section>
 
 				</aside>
 
