@@ -61,11 +61,13 @@ table {
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
   background-color: #f9ede0;
   font-family: 'Noto Sans', sans-serif;
   font-size: 67.5%;
   color: black;
+  overflow-x: hidden;
 }
 
 a {
@@ -108,19 +110,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-container {
   width: 100%;
-  height: 768px;
+  height: 512px;
   overflow: hidden;
   position: relative;
 }
 
 @media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
   .header-container {
-    height: 256px;
+    height: 192px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .header-container {
-    height: 512px;
+    height: 384px;
+  }
+}
+@media (min-width: 600px) and (max-width: 960px) and (min-height: 600px) and (max-height: 960px) and (-webkit-min-device-pixel-ratio: 1) {
+  .header-container {
+    height: 256px;
   }
 }
 .header-container img {
@@ -143,10 +150,12 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   text-align: center;
   margin-bottom: 2rem;
+  background-color: rgba(255, 150, 0, 0.21);
 }
 
 .nav-container li {
   display: inline-block;
+  border-radius: 5px;
   padding: 1rem;
   margin-right: 1rem;
   font-size: 2.5rem;
@@ -169,6 +178,8 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1 1 0px;
   font-size: 1.4rem;
   line-height: 1.5;
+  text-align: center;
+  justify-content: center;
 }
 
 .content-container h4 {
@@ -180,6 +191,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
   .content-container h4 {
     padding: 0;
+  }
+
+  .nav-container li {
+    font-size: 2rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -223,6 +238,9 @@ h1, h2, h3, h4, h5, h6 {
 .about-me-section img {
   max-width: 100%;
   margin: 1rem;
+  -webkit-box-shadow: 0px 0px 15px -1px #948772;
+  -moz-box-shadow: 0px 0px 15px -1px #948772;
+  box-shadow: 0px 0px 15px -1px #948772;
 }
 
 .sidebar-container {
@@ -237,7 +255,6 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-container h5 {
   padding: 0;
   margin: 0;
-  margin-right: 1rem;
 }
 
 .sidebar-photo-container {
@@ -279,6 +296,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-form-submit:hover {
   background-color: #ffac87;
+}
+
+textarea {
+  resize: none;
 }
 
 .footer-container {

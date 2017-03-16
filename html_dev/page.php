@@ -38,41 +38,45 @@ if ($_POST) {
 
   <body>
 
-		<header class="header-container">
+		<a href="#content">
 
-			<picture>
+			<header class="header-container">
 
-				<!-- Hieronder is je Header image plaating. Deze srcset bevat de breakpoints voor het inladen van je header. Als de viewport (de breedte van de browser) 1366px breed is, of minder, dan laadt
-			ie de 1366.jpg in. Als de width 1024 of lager is, dan laadt de browser de 1024.jpg in, enzovoor.
-		Als je dus je nieuwe header hebt, kun je die het beste in onderstaande formaten (breedte) opslaan.
-	Mocht alles for some reason falen, dan laadt ie de 2540 breedte in -->
+				<picture>
 
-					<img srcset="images/joost_headerPhoto_1366.jpg 1366w,
+					<!-- Hieronder is je Header image plaating. Deze srcset bevat de breakpoints voor het inladen van je header. Als de viewport (de breedte van de browser) 1366px breed is, of minder, dan laadt
+				ie de 1366.jpg in. Als de width 1024 of lager is, dan laadt de browser de 1024.jpg in, enzovoor.
+			Als je dus je nieuwe header hebt, kun je die het beste in onderstaande formaten (breedte) opslaan.
+		Mocht alles for some reason falen, dan laadt ie de 2540 breedte in -->
 
-			      images/joost_headerPhoto_1024.jpg 1024w,
+						<img srcset="images/joost_headerPhoto_1366.jpg 1366w,
 
-			      images/joost_headerPhoto_768.jpg 768w"
+				      images/joost_headerPhoto_1024.jpg 1024w,
 
-			   sizes="100vw"
+				      images/joost_headerPhoto_768.jpg 768w"
 
-			   src="images/joost_headerPhoto_2540.jpg" alt="Joost playing guitar"
-				 />
+				   sizes="100vw"
 
-			</picture>
+				   src="images/joost_headerPhoto_2540.jpg" alt="Joost playing guitar"
+					 />
 
-		</header>
+				</picture>
+
+			</header>
+
+		</a>
 
 		<nav class="nav-container">
 
 			<ul class="nav-menu"> <!-- Dit is je menu. Voor een nieuwe menu item, kopieer een van deze regels of tik <li>Je nieuwe Menu item</li> -->
 
-				<a href="index.php"><li>Home</li></a>
+				<a href="index.php"><li>Home</li></a> <!-- een <a href=""> is een link naar een andere locatie. -->
 				<a href="lessen.php"><li>Lessen</li></a>
 				<a href="contact.php"><li>Contact</li></a>
 
 		</nav>
 
-		<main class="content-container">
+		<main class="content-container" id="content">
 
 				<section class="about-me-section">
 
@@ -81,8 +85,6 @@ if ($_POST) {
 				</section>
 
 				<aside class="sidebar-container">
-
-					<h5>Vragen? Mail mij: jspanjerberg@gmail.com</h5>
 
 					<section class="social-media-container">
 
@@ -95,7 +97,12 @@ if ($_POST) {
 
 					<?php
 
-					$safeGet = htmlspecialchars($_GET["v"]);
+					$safeGet = "";
+
+					if (isset($_GET["v"]))
+					{
+						$safeGet = htmlspecialchars($_GET["v"]);
+					}
 
 					if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
 					    {

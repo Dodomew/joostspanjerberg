@@ -5,14 +5,14 @@ if ($_POST) {
 	 $name=$_REQUEST['name'];
 	 $email=$_REQUEST['email'];
 	 $message=$_REQUEST['message'];
-	 if (($name=="")||($email=="")||($message==""))
+	 if ($email == "")
 	 		{
 	 		//echo "Vul alsjeblieft <a href=\"\">alle velden in.</a>";
 	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=false");
 	 		}
 	 else{
 	 		$from="From: $name($email)";
-	 		$subject="SUBJECT HERE";
+	 		$subject="Ik wil graag contact met je!";
 	 		mail("jspanjerberg@gmail.com", $subject, $message, $from);
 	 		//echo "Email is verstuurd!";
 	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=true");
@@ -38,29 +38,33 @@ if ($_POST) {
 
   <body>
 
-		<header class="header-container">
+		<a href="#content">
 
-			<picture>
+			<header class="header-container">
 
-				<!-- Hieronder is je Header image plaating. Deze srcset bevat de breakpoints voor het inladen van je header. Als de viewport (de breedte van de browser) 1366px breed is, of minder, dan laadt
-			ie de 1366.jpg in. Als de width 1024 of lager is, dan laadt de browser de 1024.jpg in, enzovoor.
-		Als je dus je nieuwe header hebt, kun je die het beste in onderstaande formaten (breedte) opslaan.
-	Mocht alles for some reason falen, dan laadt ie de 2540 breedte in -->
+				<picture>
 
-					<img srcset="images/joost_headerPhoto_1366.jpg 1366w,
+					<!-- Hieronder is je Header image plaating. Deze srcset bevat de breakpoints voor het inladen van je header. Als de viewport (de breedte van de browser) 1366px breed is, of minder, dan laadt
+				ie de 1366.jpg in. Als de width 1024 of lager is, dan laadt de browser de 1024.jpg in, enzovoor.
+			Als je dus je nieuwe header hebt, kun je die het beste in onderstaande formaten (breedte) opslaan.
+		Mocht alles for some reason falen, dan laadt ie de 2540 breedte in -->
 
-			      images/joost_headerPhoto_1024.jpg 1024w,
+						<img srcset="images/joost_headerPhoto_1366.jpg 1366w,
 
-			      images/joost_headerPhoto_768.jpg 768w"
+				      images/joost_headerPhoto_1024.jpg 1024w,
 
-			   sizes="100vw"
+				      images/joost_headerPhoto_768.jpg 768w"
 
-			   src="images/joost_headerPhoto_2540.jpg" alt="Joost playing guitar"
-				 />
+				   sizes="100vw"
 
-			</picture>
+				   src="images/joost_headerPhoto_2540.jpg" alt="Joost playing guitar"
+					 />
 
-		</header>
+				</picture>
+
+			</header>
+
+		</a>
 
 		<nav class="nav-container">
 
@@ -72,7 +76,7 @@ if ($_POST) {
 
 		</nav>
 
-		<main class="content-container">
+		<main class="content-container" id="content">
 
 				<section class="about-me-section">
 
@@ -92,12 +96,7 @@ if ($_POST) {
 
 					<h4>Hieronder de bands waar ik mee optreed:
 
-						<ul>
-
-							<li>Brighter Light</li>
-							<li>Mills</li>
-
-						</ul>
+						<p>Check dit vette plaatje dan (Dit kan eventueel kleiner). Check dit vette plaatje dan (Dit kan eventueel kleiner). Check dit vette plaatje dan (Dit kan eventueel kleiner). </p>
 
 					</h4>
 
@@ -109,7 +108,7 @@ if ($_POST) {
 
 				</section>
 
-				<aside class="sidebar-container">
+				<aside class="sidebar-container" id="sidebar-container-id">
 
 					<h5>Vragen? Mail mij: jspanjerberg@gmail.com</h5>
 
@@ -124,7 +123,14 @@ if ($_POST) {
 
 					<?php
 
-					$safeGet = htmlspecialchars($_GET["v"]);
+					//$safeGet = htmlspecialchars($_GET["v"]);
+
+					$safeGet = "";
+
+					if (isset($_GET["v"]))
+					{
+						$safeGet = htmlspecialchars($_GET["v"]);
+					}
 
 					if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
 					    {
@@ -137,17 +143,17 @@ if ($_POST) {
 
 						<section class="contact-form" id="contact-me-form">
 
-					    <form action="index.php#contact-me-form" method="POST" enctype="multipart/form-data">
+					    <form action="index.php#sidebar-container-id" method="POST" enctype="multipart/form-data">
 					    <input type="hidden" name="action" value="submit">
 
 					    Wat is je naam?<br>
-					    <input name="name" type="text" value="" size="30"/><br>
+					    <input name="name" type="text" value="" size="30" placeholder="Mijn naam is..."/><br>
 
 					    Wat is je emailadres?<br>
-					    <input name="email" type="email" value="" size="30"/><br>
+					    <input name="email" type="email" value="" size="30" required placeholder="Voer je emailadres in."/><br>
 
 					    Wat kan ik voor je doen?<br>
-					    <textarea name="message" rows="7" cols="30"></textarea><br>
+					    <textarea name="message" rows="7" cols="30" placeholder="Ik wil graag contact met je!"></textarea><br>
 					    <input type="submit" value="Stuur mij een mail!" class="contact-form-submit"/>
 					    </form>
 
