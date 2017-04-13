@@ -1,0 +1,41 @@
+.main-content-container
+{
+  width: 90%;
+  font-size: 2rem;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content-section-container
+{
+  width: 100%;
+  padding: 1rem;
+}
+
+.section-container-header
+{
+  border-bottom: 1px solid black;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.section-container-content
+{
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.section-container-image
+{
+  float: right;
+  width: 25%;
+}
+
+.section-container-image img
+{
+  max-width: 100%;
+}
