@@ -27,15 +27,28 @@
 {
   font-size: 1.6rem;
   margin-top: 1rem;
+  min-height: 200px;
 }
 
 .section-container-image
 {
   float: right;
   width: 25%;
+  margin-left: 1rem;
 }
 
 .section-container-image img
 {
   max-width: 100%;
+}
+
+.section-nested-list > li
+{
+  margin-bottom: 2rem;
+}
+
+.section-nested-list li > ul
+{
+  margin-top: 1rem;
+  margin-left: 1rem;
 }

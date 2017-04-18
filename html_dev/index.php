@@ -13,7 +13,7 @@ if ($_POST) {
 	 else{
 	 		$from="From: $name($email)";
 	 		$subject="Ik wil graag contact met je!";
-	 		mail("jspanjerberg@gmail.com", $subject, $message, $from);
+	 		mail("jspanjerberg@gmail.com", $subject, $message . " " . $from, $from);
 	 		//echo "Email is verstuurd!";
 	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=true");
 	 		}

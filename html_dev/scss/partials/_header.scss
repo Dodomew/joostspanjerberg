@@ -1,4 +1,5 @@
-.header-menu-container
+
+/*.header-menu-container
 {
   width: 100%;
   height: auto;
@@ -9,39 +10,80 @@
   -moz-box-shadow: 0px 1px 10px 0px rgba(158,158,158,0.8);
   box-shadow: 0px 1px 10px 0px rgba(158,158,158,0.8);
 }
+*/
+.header-menu-container
+{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  background-color: $header-container-color;
+}
 
 .header-menu-container figure
 {
   padding: 1rem;
-  float: left;
+  flex: 1 0 45%;
 }
 
 .header-menu-container figure img
 {
-  width: 100px;
+  height: 3rem;
 }
 
 .header-menu-list
 {
-  padding: 1rem;
-  float: right;
+  font-size: 0; // http://stackoverflow.com/questions/14958606/css-html-horizonal-list-remove-this-mystery-gap-between-list-items-see-pic
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 45%;
+  margin-right: 1rem;
 }
 
-.header-menu-list li
+.header-menu-list span
 {
-  display: inline-block;
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 0.5rem 0 0.5rem 0;
+  flex: 1 0 25%;
 }
 
-.header-menu-list li:not(:last-child)
+.header-menu-list span:hover .header-menu-list-item
+{
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.menu-list-item-rightborder
 {
   border-right: 1px solid black;
+}
+
+.menu-list-item-rightborder li
+{
+  width: 75%;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.header-menu-list > span:last-child > .menu-list-item-rightborder// http://stackoverflow.com/questions/11298713/css3-to-get-the-last-li-from-the-top-level-list-in-a-nested-ul
+{
+  border: none;
+}
+
+.header-menu-list-item
+{
+  font-size: 2rem;
+  flex: 1 0 25%;
+  text-align: center;
 }
 
 .header-image
 {
   width: 100%;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -49,12 +91,4 @@
 .header-image img
 {
   max-width: 100%;
-}
-
-.header-image-logo
-{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 200px;
 }
