@@ -22,6 +22,7 @@ if ($_POST) {
    exit();
 }
 ?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -38,88 +39,204 @@ if ($_POST) {
 
   <body>
 
-		<a href="#content">
+		<div class="site-container">
 
-			<header class="header-container">
+		<header class="header-menu-container">
 
-				<picture>
+			<figure class="header-menu-logo">
 
-					<!-- Hieronder is je Header image plaating. Deze srcset bevat de breakpoints voor het inladen van je header. Als de viewport (de breedte van de browser) 1366px breed is, of minder, dan laadt
-				ie de 1366.jpg in. Als de width 1024 of lager is, dan laadt de browser de 1024.jpg in, enzovoor.
-			Als je dus je nieuwe header hebt, kun je die het beste in onderstaande formaten (breedte) opslaan.
-		Mocht alles for some reason falen, dan laadt ie de 2540 breedte in -->
+				<img src="images/spanjerberg_logo_nomusic_black.svg" alt="Spanjerberg spelled out in black letters">
 
-						<img srcset="images/joost_headerPhoto_1366.jpg 1366w,
+			</figure>
 
-				      images/joost_headerPhoto_1024.jpg 1024w,
+			<ul class="header-menu-list">
 
-				      images/joost_headerPhoto_768.jpg 768w"
+				<span>
 
-				   sizes="100vw"
+					<div class="menu-list-item-rightborder">
 
-				   src="images/joost_headerPhoto_2540.jpg" alt="Joost playing guitar"
-					 />
+						<a href="#"><li class="header-menu-list-item">Home</li></a>
 
-				</picture>
+					</div>
 
-			</header>
+				</span>
 
-		</a>
+				<span>
 
-		<nav class="nav-container">
+					<div class="menu-list-item-rightborder">
 
-			<ul class="nav-menu"> <!-- Dit is je menu. Voor een nieuwe menu item, kopieer een van deze regels of tik <li>Je nieuwe Menu item</li> -->
+						<a href="#"><li class="header-menu-list-item">Lessen</li></a>
 
-				<a href="index.php"><li>Home</li></a>
-				<a href="lessen.php"><li>Lessen</li></a>
-				<a href="contact.php"><li>Contact</li></a>
+					</div>
 
-		</nav>
+				</span>
 
-		<main class="content-container" id="content">
+				<span>
 
-				<section class="about-me-section">
+					<div class="menu-list-item-rightborder">
 
-					<h3>Hallo! Mijn naam is Joost en ik ben gitarist. Ik treed veel op met bands en geef graag gitaarles aan anderen.</h3>
+						<a href="#"><li class="header-menu-list-item">Prijzen</li></a>
 
-					<h4>Hieronder vind je referenties over mij:
+					</div>
 
-						<ul>
+				</span>
 
-							<li>Meneer 1 : Ja, die Joost is echt een baas. Ik ben een meester in gitaar spelen geworden en kan nu altijd Wonderwall spelen wanneer nodig.</li>
-							<li>Vrouw 1: Joost heeft mijn dochter goed begeleid met het leren van de gitaar! Ze wilde eigenlijk liever op onze iPad spelen, maar we vinden dat ze wel iets nuttigs mag leren en daar heeft Joost bij geholpen.</li>
-							<li>Ikea: Wij huren Joost af en toe in voor een leuk achtergrondmuziek in de winkel. Beter dan die meuk op de radio!</li>
+				<span>
 
-						</ul>
+					<div class="menu-list-item-rightborder">
 
-					</h4>
+						<a href="#"><li class="header-menu-list-item">Contact</li></a>
 
-					<h4>Hieronder de bands waar ik mee optreed:
+					</div>
 
-						<p>Check dit vette plaatje dan (Dit kan eventueel kleiner). Check dit vette plaatje dan (Dit kan eventueel kleiner). Check dit vette plaatje dan (Dit kan eventueel kleiner). </p>
+				</span>
 
-					</h4>
+			</ul>
 
-					<h4>Check dit vette plaatje dan (Dit kan eventueel kleiner):
+		</header>
 
-						<img src="images/DSCF8056.JPG" alt="Joost teaching guitar">
+		<figure class="header-image">
 
-					</h4>
+			<img src="images/header-image-1920.jpg" alt="Joost mentoring girl playing guitar">
+			<!-- <img class="header-image-logo" src="images/spanjerberg_logo_white.svg" alt="Spanjerberg spelled out in white letters"> -->
+
+		</figure>
+
+		<main class="main-content-container">
+
+			<section class="main-content-section-container">
+
+				<header class="section-container-header">
+
+					<h1>Bent u op zoek naar een gitaardocent?</h1>
+
+				</header>
+
+				<section class="section-container-content">
+
+					<figure class="section-container-image">
+
+						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+
+					</figure>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+					<p>
+						Vivamus nec magna ante.
+						Donec scelerisque felis ac finibus congue.
+						Curabitur ultrices velit non metus faucibus, tincidunt pulvinar ante efficitur.
+						In sagittis dignissim metus, eu elementum odio. Morbi eget lacus eros.
+						Phasellus ipsum velit, commodo id vulputate eget, lacinia sed nibh.
+					</p>
 
 				</section>
 
-				<aside class="sidebar-container" id="sidebar-container-id">
+			</section>
 
-					<h5>Vragen? Mail mij: jspanjerberg@gmail.com</h5>
+			<section class="main-content-section-container">
 
-					<section class="social-media-container">
+				<header class="section-container-header">
 
-						<!-- De image sources zijn nu placeholders. die kun je vervangen door iets anders. Ik gebruik .svg's (adobe illustrator) want die zijn responsive op elk formaat -->
+					<h1>Lessen</h1>
 
-						<a href="mailto:dodomew@gmail.com?subject=Hoi%20Joost" target="_blank"><img src="images/mail-1.svg" alt="Mail icon in black"></a>
-						<a href="https://www.facebook.com/joost.spanjerberg?fref=ts"><img src="images/facebook.svg" alt="Facebook icon in black"></a>
+				</header>
 
-					</section>
+				<section class="section-container-content">
+
+					<figure class="section-container-image">
+
+						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+
+					</figure>
+
+					<p>Hoe zijn de lessen opgebouwd?</p><br>
+
+						<ul class="section-nested-list">
+
+							<li>Tijd : 30 minuten</li>
+
+							<li><strong>Les 1</strong>
+
+								<ul>
+
+									<li>Introductie</li>
+
+								</ul>
+
+							</li>
+
+							<li><strong>Les 2</strong>
+
+								<ul>
+
+									<li>Dingen</li>
+
+								</ul>
+
+							</li>
+
+							<li><strong>Les 3</strong>
+
+								<ul>
+
+									<li>Meer dingen</li>
+
+								</ul>
+
+							</li>
+
+						</ul>
+
+				</section>
+
+			</section>
+
+			<section class="main-content-section-container">
+
+				<header class="section-container-header">
+
+					<h1>Prijzen</h1>
+
+				</header>
+
+				<section class="section-container-content">
+
+					<figure class="section-container-image">
+
+						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+
+					</figure>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+					<p>
+						Vivamus nec magna ante.
+						Donec scelerisque felis ac finibus congue.
+						Curabitur ultrices velit non metus faucibus, tincidunt pulvinar ante efficitur.
+						In sagittis dignissim metus, eu elementum odio. Morbi eget lacus eros.
+						Phasellus ipsum velit, commodo id vulputate eget, lacinia sed nibh.
+					</p>
+
+				</section>
+
+			</section>
+
+			<section class="main-content-section-container">
+
+				<header class="section-container-header">
+
+					<h1>Contact</h1>
+
+				</header>
+
+				<section class="section-container-content">
+
+					<figure class="section-container-image">
+
+						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+
+					</figure>
 
 					<?php
 
@@ -174,19 +291,13 @@ if ($_POST) {
 					    }
 					?>
 
-					</section>
+				</section>
 
-				</aside>
+			</section>
 
 		</main>
 
-		<footer class="footer-container">
-
-			<h6>Website gemaakt door Doortje Spanjerberg</h6>
-			<h6>Foto's gemaakt door Pietje Puk</h6>
-			<h6>KVK Nummer: 12345<br>Lalalala<br>Lololooooo</h6>
-
-		</footer>
+		</div>
 
   </body>
 
