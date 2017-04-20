@@ -94,7 +94,7 @@ table {
 }
 
 .header-menu-container figure img {
-  height: 4rem;
+  height: 5rem;
   padding: 0.5rem;
 }
 
@@ -114,7 +114,7 @@ table {
 
 .header-menu-list span:hover .header-menu-list-item {
   background-color: lightgrey;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .menu-list-item-rightborder {
@@ -132,7 +132,7 @@ table {
 }
 
 .header-menu-list-item {
-  font-size: 2rem;
+  font-size: 2.5rem;
   flex: 1 0 25%;
   text-align: center;
 }
@@ -147,6 +147,24 @@ table {
   max-width: 100%;
 }
 
+@media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .header-menu-container figure {
+    flex: 1 0 20%;
+  }
+
+  .header-menu-container figure img {
+    height: 2rem;
+  }
+
+  .header-menu-list {
+    flex: 1 0 70%;
+    margin-right: 0;
+  }
+
+  .header-menu-list-item {
+    font-size: 1.5rem;
+  }
+}
 .main-content-container {
   width: 90%;
   font-size: 2rem;
@@ -180,6 +198,7 @@ table {
   float: right;
   width: 25%;
   margin-left: 1rem;
+  display: block;
 }
 
 .section-container-image img {
@@ -195,6 +214,11 @@ table {
   margin-left: 1rem;
 }
 
+@media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .section-container-image {
+    display: none;
+  }
+}
 html, body {
   margin: 0;
   padding: 0;

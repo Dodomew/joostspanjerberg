@@ -120,8 +120,6 @@ if ($_POST) {
 
 					</figure>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
 					<p>
 						Vivamus nec magna ante.
 						Donec scelerisque felis ac finibus congue.

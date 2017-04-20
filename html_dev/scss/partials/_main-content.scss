@@ -36,6 +36,7 @@
   float: right;
   width: 25%;
   margin-left: 1rem;
+  display: block;
 }
 
 .section-container-image img
@@ -53,3 +54,11 @@
   margin-top: 1rem;
   margin-left: 1rem;
 }
+
+@include responsiveLayoutMobile()
+{
+  .section-container-image
+  {
+    display: none;
+  }
+};

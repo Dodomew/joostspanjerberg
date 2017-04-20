@@ -42,7 +42,7 @@
 
 .header-menu-container figure img
 {
-  height: 4rem;
+  height: 5rem;
   padding: 0.5rem;
 }
 
@@ -65,7 +65,7 @@
 .header-menu-list span:hover .header-menu-list-item
 {
   background-color: lightgrey;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .menu-list-item-rightborder
@@ -75,7 +75,7 @@
 
 .menu-list-item-rightborder li
 {
-  width: 75%;
+  width: 75%; // zodat niet de hele width van de li andere kleur krijgt on hover
   margin: auto;
   padding: 0.5rem;
 }
@@ -87,7 +87,7 @@
 
 .header-menu-list-item
 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   flex: 1 0 25%;
   text-align: center;
 }
@@ -103,3 +103,27 @@
 {
   max-width: 100%;
 }
+
+@include responsiveLayoutMobile()
+{
+  .header-menu-container figure
+  {
+    flex: 1 0 20%;
+  }
+
+  .header-menu-container figure img
+  {
+    height: 2rem;
+  }
+
+  .header-menu-list
+  {
+    flex: 1 0 70%;
+    margin-right: 0;
+  }
+
+  .header-menu-list-item
+  {
+    font-size: 1.5rem;
+  }
+};
