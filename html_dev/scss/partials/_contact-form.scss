@@ -1,12 +1,13 @@
 .contact-form
 {
-
+	width: 33.33%;
 }
 
 .contact-form input
 {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	width: 100%;
 }
 
 .contact-form-submit
@@ -35,4 +36,20 @@
 textarea
 {
 	resize: none;
+	width: 100%;
 }
+
+input[type="submit"]
+{
+	width: auto;
+}
+
+@include responsiveLayoutMobile()
+{
+	.contact-form
+	{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+};
