@@ -1,12 +1,12 @@
 .contact-form
 {
-	width: 33.33%;
+	flex: 0 0 40%;
 }
 
 .contact-form input
 {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 	width: 100%;
 }
 
@@ -42,14 +42,49 @@ textarea
 input[type="submit"]
 {
 	width: auto;
+	padding: 2rem;
+}
+
+.contact-socialmedia-container
+{
+	flex: 0 0 40%;
+	text-align: center;
+}
+
+.contact-socialmedia-container header
+{
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.contact-socialmedia-icons
+{
+	display: inline-block;
+}
+
+.contact-socialmedia-container img
+{
+	width: 75px;
+	margin: 1rem;
 }
 
 @include responsiveLayoutMobile()
 {
 	.contact-form
 	{
-		width: 100%;
+		flex: 0 0 100%;
 		margin: auto;
 		text-align: center;
 	}
+
+	.contact-socialmedia-container
+	{
+		flex: 0 0 100%;
+	}
+
+	.contact-socialmedia-container img
+	{
+		width: 50px;
+	}
+
 };

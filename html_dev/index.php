@@ -2,18 +2,19 @@
 if ($_POST) {
    // Execute code (such as database updates) here.
 
-	 $name=$_REQUEST['name'];
-	 $email=$_REQUEST['email'];
+	  // $name=$_REQUEST['name'];
+	 $emailone=$_REQUEST['emailone'];
+	 $emailtwo=$_REQUEST['emailtwo'];
 	 $message=$_REQUEST['message'];
-	 if ($email == "")
+	 if ($emailone == "" || $emailtwo == "" || $emailone != $emailtwo || $message == "")
 	 		{
 	 		//echo "Vul alsjeblieft <a href=\"\">alle velden in.</a>";
 	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=false");
 	 		}
 	 else{
-	 		$from="From: $name($email)";
+	 		$from="Van: " . $emailone;
 	 		$subject="Ik wil graag contact met je!";
-	 		mail("jspanjerberg@gmail.com", $subject, $message . " " . $from, $from);
+	 		mail("jspanjerberg@gmail.com", $subject, $message . "\r\n" . $from, $from);
 	 		//echo "Email is verstuurd!";
 	    header("Location: " . $_SERVER['PHP_SELF'] . "?v=true");
 	 		}
@@ -230,72 +231,117 @@ if ($_POST) {
 
 				<section class="section-container-content">
 
-					<figure class="section-container-image">
+					<div class="display-flex">
 
-						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+						<?php
 
-					</figure>
+						//$safeGet = htmlspecialchars($_GET["v"]);
 
-					<?php
+						$safeGet = "";
 
-					//$safeGet = htmlspecialchars($_GET["v"]);
+						if (isset($_GET["v"]))
+						{
+							$safeGet = htmlspecialchars($_GET["v"]);
+						}
 
-					$safeGet = "";
+						if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
+						    {
 
-					if (isset($_GET["v"]))
-					{
-						$safeGet = htmlspecialchars($_GET["v"]);
-					}
-
-					if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
-					    {
-
-								if ($safeGet == "false")
-								{
-									echo "<strong>Vul alsjeblieft alle velden in.</strong>";
-								}
-					    ?>
-
-						<section class="contact-form" id="contact-me-form">
-
-					    <form action="index.php#sidebar-container-id" method="POST" enctype="multipart/form-data">
-					    <input type="hidden" name="action" value="submit">
-
-					    Wat is je naam?<br>
-					    <input name="name" type="text" value="" size="30" placeholder="Mijn naam is..."/><br>
-
-					    Wat is je emailadres?<br>
-					    <input name="email" type="email" value="" size="30" required placeholder="Voer je emailadres in."/><br>
-
-					    Wat kan ik voor je doen?<br>
-					    <textarea name="message" rows="7" cols="30" placeholder="Ik wil graag contact met je!"></textarea><br>
-					    <input type="submit" value="Stuur mij een mail!" class="contact-form-submit"/>
-					    </form>
-
-
-					    <?php
-					    }
-					else                /* send the submitted data */
-					    {
-
-									if($safeGet == "true")
+									if ($safeGet == "false")
 									{
-										echo "<strong>Email is verstuurd!</strong>";
+										echo "<strong>Vul alsjeblieft alle velden in.</strong>";
 									}
-									else {
-										echo "<strong>Er is iets fout gegaan! Vul het formulier alsjeblieft opnieuw in.</strong>";
-									}
+						    ?>
 
-					    }
-					?>
+							<section class="contact-form" id="contact-me-form">
+
+						    <form action="index.php" method="POST" enctype="multipart/form-data">
+
+							    <input type="hidden" name="action" value="submit">
+
+									Wat is je emailadres?<br>
+									<input name="emailone" type="email" value="" size="30" required placeholder="Voer je emailadres in."/><br>
+
+									Wat is je email ter controle?<br>
+									<input name="emailtwo" type="email" value="" size="30" required placeholder="Voer je emailadres nogmaals in."/><br>
+
+									Wat kan ik voor je doen?<br>
+									<textarea name="message" rows="7" cols="30" placeholder="Ik wil graag contact met je!"></textarea><br>
+									<input type="submit" value="Stuur mij een bericht!" class="contact-form-submit"/>
+
+								</form>
+
+
+	<!--
+						    Wat is je naam?<br>
+						    <input name="name" type="text" value="" size="30" placeholder="Mijn naam is..."/><br>
+
+							-->
+
+						    <?php
+						    }
+						else                /* send the submitted data */
+						    {
+
+										if($safeGet == "true")
+										{
+											echo "<strong>Je bericht is verstuurd!</strong>";
+										}
+										else {
+											echo "<strong>Er is iets fout gegaan! Vul het formulier alsjeblieft opnieuw in.</strong>";
+										}
+
+						    }
+						?>
+
+					</section>
+
+				<!-- Youtube, facebook, soundcloud en instagram logo links naar pagina -->
+
+				<section class="contact-socialmedia-container">
+
+					<header><h1>Vind mij op sociale media!</h1></header>
+
+					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
 
 				</section>
+
+				</div>
 
 			</section>
 
 		</main>
 
+		<footer class="footer-container">
+
+			<section class="footer-section">
+
+				<h6>Website gemaakt door Doortje Spanjerberg</h6>
+
+			</section>
+
+			<section class="footer-section">
+
+				<h6>Fotografie door Pietje</h6>
+
+			</section>
+
+			<section class="footer-section">
+
+				<h6>KVK nummer: 1234567890</h6>
+				<h6>Spanjerberg BV</h6>
+				<h6>Europaplein 1337 Utrecht</h6>
+
+			</section>
+
+		</footer>
+
 		</div>
+
+		<!-- footer met kvk -->
 
   </body>
 

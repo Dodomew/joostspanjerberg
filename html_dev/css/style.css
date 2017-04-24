@@ -214,18 +214,24 @@ table {
   margin-left: 1rem;
 }
 
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 @media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
   .section-container-image {
     display: none;
   }
 }
 .contact-form {
-  width: 33.33%;
+  flex: 0 0 40%;
 }
 
 .contact-form input {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
@@ -256,15 +262,56 @@ textarea {
 
 input[type="submit"] {
   width: auto;
+  padding: 2rem;
+}
+
+.contact-socialmedia-container {
+  flex: 0 0 40%;
+  text-align: center;
+}
+
+.contact-socialmedia-container header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-socialmedia-icons {
+  display: inline-block;
+}
+
+.contact-socialmedia-container img {
+  width: 75px;
+  margin: 1rem;
 }
 
 @media (min-width: 240px) and (max-width: 767px) and (min-height: 240px) and (max-height: 767px) and (-webkit-min-device-pixel-ratio: 1) {
   .contact-form {
-    width: 100%;
+    flex: 0 0 100%;
     margin: auto;
     text-align: center;
   }
+
+  .contact-socialmedia-container {
+    flex: 0 0 100%;
+  }
+
+  .contact-socialmedia-container img {
+    width: 50px;
+  }
 }
+.footer-container {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
 html, body {
   margin: 0;
   padding: 0;

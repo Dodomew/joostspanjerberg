@@ -55,6 +55,13 @@
   margin-left: 1rem;
 }
 
+.display-flex
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 @include responsiveLayoutMobile()
 {
   .section-container-image
