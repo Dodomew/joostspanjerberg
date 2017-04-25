@@ -35,12 +35,14 @@ if ($_POST) {
         <meta name="description" content="Joost Spanjerberg Portfolio">
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0" /> <!--user-scalable=no -->
         <link rel="stylesheet" href="css/style.css" media="all">
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+				<script src="js/scroll.js"></script>
 
   </head>
 
   <body>
 
-		<div class="site-container">
+		<div class="site-container" id="home">
 
 		<header class="header-menu-container">
 
@@ -56,7 +58,7 @@ if ($_POST) {
 
 					<div class="menu-list-item-rightborder">
 
-						<a href="#"><li class="header-menu-list-item">Home</li></a>
+						<a href="#home"><li class="header-menu-list-item" id="menu-home-click" onclick="smoothScrolleID("lessen");return false;">Home</li></a>
 
 					</div>
 
@@ -66,7 +68,7 @@ if ($_POST) {
 
 					<div class="menu-list-item-rightborder">
 
-						<a href="#"><li class="header-menu-list-item">Lessen</li></a>
+						<a href="#"><li class="header-menu-list-item" onclick="elLessen.scrollIntoView();">Lessen</li></a>
 
 					</div>
 
@@ -76,7 +78,7 @@ if ($_POST) {
 
 					<div class="menu-list-item-rightborder">
 
-						<a href="#"><li class="header-menu-list-item">Prijzen</li></a>
+						<a href="#"><li class="header-menu-list-item" onclick="elPrijzen.scrollIntoView();">Prijzen</li></a>
 
 					</div>
 
@@ -86,7 +88,7 @@ if ($_POST) {
 
 					<div class="menu-list-item-rightborder">
 
-						<a href="#"><li class="header-menu-list-item">Contact</li></a>
+						<a href="#"><li class="header-menu-list-item" onclick="elContact.scrollIntoView();">Contact</li></a>
 
 					</div>
 
@@ -135,7 +137,7 @@ if ($_POST) {
 
 			<section class="main-content-section-container">
 
-				<header class="section-container-header">
+				<header class="section-container-header" id="lessen">
 
 					<h1>Lessen</h1>
 
@@ -193,7 +195,7 @@ if ($_POST) {
 
 			<section class="main-content-section-container">
 
-				<header class="section-container-header">
+				<header class="section-container-header" id="prijzen">
 
 					<h1>Prijzen</h1>
 
@@ -223,7 +225,7 @@ if ($_POST) {
 
 			<section class="main-content-section-container">
 
-				<header class="section-container-header">
+				<header class="section-container-header" id="contact">
 
 					<h1>Contact</h1>
 
@@ -302,10 +304,10 @@ if ($_POST) {
 
 					<header><h1>Vind mij op sociale media!</h1></header>
 
-					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
-					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
-					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
-					<figure class="contact-socialmedia-icons"><img src="images/facebook.svg" alt="facebook icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/facebook-logo-color.svg" alt="Facebook icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/instagram-logo-color.svg" alt="Instagram icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/youtube-logo-color.svg" alt="Youtube icon"></img></figure>
+					<figure class="contact-socialmedia-icons"><img src="images/soundcloud-logo-color.svg" alt="SoundCloud icon"></img></figure>
 
 				</section>
 
@@ -320,12 +322,15 @@ if ($_POST) {
 			<section class="footer-section">
 
 				<h6>Website gemaakt door Doortje Spanjerberg</h6>
+				<h6>Regel twee</h6>
+				<h6>Regel drie</h6>
 
 			</section>
 
 			<section class="footer-section">
 
 				<h6>Fotografie door Pietje</h6>
+				<h6>Gitaar geleverd door Henk</h6>
 
 			</section>
 
@@ -341,7 +346,14 @@ if ($_POST) {
 
 		</div>
 
-		<!-- footer met kvk -->
+		<!--<script>
+
+			var elHome = document.getElementById("home");
+			var elLessen = document.getElementById("lessen");
+			var elPrijzen = document.getElementById("prijzen");
+			var elContact = document.getElementById("contact");
+
+		</script>-->
 
   </body>
 
