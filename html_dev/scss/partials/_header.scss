@@ -9,10 +9,8 @@
 .header-menu-container
 {
   width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 5rem;
+  @include displayFlex(center, center);
   position: fixed;
   z-index: 10;
   background-color: $header-container-color;
@@ -28,16 +26,14 @@
 
 .header-menu-container figure img
 {
-  height: 5rem;
+  height: 4rem;
   padding: 0.5rem;
 }
 
 .header-menu-list
 {
   font-size: 0; // http://stackoverflow.com/questions/14958606/css-html-horizonal-list-remove-this-mystery-gap-between-list-items-see-pic
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include displayFlex(center, center);
   flex: 1 0 45%;
   margin-right: 1rem;
 }
@@ -48,22 +44,23 @@
   flex: 1 0 25%;
 }
 
+.menu-list-item-rightborder li
+{
+  width: auto; // zodat niet de hele width van de li andere kleur krijgt on hover
+  margin: auto;
+  padding: 0.5rem;
+}
+
 .header-menu-list span:hover .header-menu-list-item
 {
   background-color: lightgrey;
   border-radius: 2px;
+  width: 75%;
 }
 
 .menu-list-item-rightborder
 {
   border-right: 1px solid black;
-}
-
-.menu-list-item-rightborder li
-{
-  width: 75%; // zodat niet de hele width van de li andere kleur krijgt on hover
-  margin: auto;
-  padding: 0.5rem;
 }
 
 .header-menu-list > span:last-child > .menu-list-item-rightborder// http://stackoverflow.com/questions/11298713/css3-to-get-the-last-li-from-the-top-level-list-in-a-nested-ul
@@ -95,17 +92,20 @@
 {
   .header-menu-container figure
   {
-    flex: 1 0 20%;
+    flex: 1 0 10%;
   }
 
   .header-menu-container figure img
   {
-    height: 2rem;
+    height: auto;
+    width: 100%;
+    padding-left: 0.25rem;
+    vertical-align: middle;
   }
 
   .header-menu-list
   {
-    flex: 1 0 70%;
+    flex: 1 0 80%;
     margin-right: 0;
   }
 
@@ -113,4 +113,51 @@
   {
     font-size: 1.5rem;
   }
+
+  .header-menu-list span:hover .header-menu-list-item
+  {
+    width: auto;
+  }
+
+  .header-image
+  {
+    margin-bottom: 0;
+  }
+
+  .header-image img
+  {
+    margin-top: 5rem; //menu container height
+  }
 };
+
+@include responsiveLayoutNexusSeven()
+{
+  .header-menu-container figure
+  {
+    flex: 1 0 10%;
+  }
+
+  .header-menu-container figure img
+  {
+    height: auto;
+    width: 100%;
+    padding-left: 0.25rem;
+    vertical-align: middle;
+  }
+
+  .header-menu-list
+  {
+    flex: 1 0 80%;
+    margin-right: 0;
+  }
+
+  .header-menu-list-item
+  {
+    font-size: 1.5rem;
+  }
+
+  .header-menu-list span:hover .header-menu-list-item
+  {
+    width: auto;
+  }
+}

@@ -15,15 +15,17 @@ $max-landscape-tablet-size: 1366px; //image size
 $min-tablet-nexus-size: 600px;
 $max-tablet-nexus-size: 960px;
 
-@mixin displayFlex($flexflow)
+@mixin displayFlex($justify, $align-items)
 {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: $flexflow;
-  flex-flow: $flexflow;
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+  -webkit-align-items: $align-items;
+  align-items: $align-items;
 }
 
 /* Mobile phones */

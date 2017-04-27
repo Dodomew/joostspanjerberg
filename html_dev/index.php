@@ -257,13 +257,13 @@ if ($_POST) {
 
 							    <input type="hidden" name="action" value="submit">
 
-									Wat is je emailadres?<br>
-									<input name="emailone" type="email" value="" size="30" required placeholder="Voer je emailadres in."/><br>
+									<h4>Wat is je emailadres?</h4> <label class="contact-form-errormessage" id="contact-form-emailone-error"></label><br>
+									<input name="emailone" id="emailone" class="contact-form-input-border " type="email" value="" size="30" required placeholder="Voer je emailadres in." onblur="return validateEmail()"/><br>
 
-									Wat is je email ter controle?<br>
-									<input name="emailtwo" type="email" value="" size="30" required placeholder="Voer je emailadres nogmaals in."/><br>
+									<h4>Wat is je email ter controle?</h4> <label class="contact-form-errormessage" id="contact-form-emailtwo-error"></label><br>
+									<input name="emailtwo" id="emailtwo" class="contact-form-input-border " type="email" value="" size="30" required placeholder="Voer je emailadres nogmaals in." onblur="return validateEmail()"/><br>
 
-									Wat kan ik voor je doen?<br>
+									<h4>Wat kan ik voor je doen?</h4> <br>
 									<textarea name="message" rows="7" cols="30" placeholder="Ik wil graag contact met je!"></textarea><br>
 									<input type="submit" value="Stuur mij een bericht!" class="contact-form-submit"/>
 
@@ -310,24 +310,24 @@ if ($_POST) {
 
 			<section class="footer-section">
 
-				<h6>Website gemaakt door Doortje Spanjerberg</h6>
-				<h6>Regel twee</h6>
-				<small>Regel drie</small>
+				<small>Website gemaakt door Doortje Spanjerberg</small><br>
+				<small>Regel twee</small><br>
+				<small>Regel drie</small><br>
 
 			</section>
 
 			<section class="footer-section">
 
-				<h6>Fotografie door Pietje</h6>
-				<h6>Gitaar geleverd door Henk</h6>
+				<small>Fotografie door Pietje</small><br>
+				<small>Gitaar geleverd door Henk</small><br>
 
 			</section>
 
 			<section class="footer-section">
 
-				<h6>KVK nummer: 1234567890</h6>
-				<h6>Spanjerberg BV</h6>
-				<h6>Europaplein 1337 Utrecht</h6>
+				<small>KVK nummer: 1234567890</small><br>
+				<small>Spanjerberg BV</small><br>
+				<small>Europaplein 1337 Utrecht</small><br>
 
 			</section>
 

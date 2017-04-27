@@ -5,10 +5,8 @@
   font-weight: 300;
   margin: auto;
   padding: 1rem;
-  display: flex;
+  @include displayFlex(center, center);
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .main-content-section-container
@@ -59,8 +57,7 @@
 
 .display-flex
 {
-  display: flex;
-  justify-content: space-between;
+  @include displayFlex(space-between, none);
   flex-wrap: wrap;
 }
 

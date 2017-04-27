@@ -5,9 +5,14 @@
 
 .contact-form input
 {
-	margin-top: 2rem;
 	margin-bottom: 2.5rem;
 	width: 100%;
+}
+
+.contact-form h4
+{
+	font-weight: 400;
+	float: left;
 }
 
 .contact-form-submit
@@ -69,6 +74,36 @@ input[type="submit"]
 	vertical-align: middle;
 }
 
+.contact-form-input-border
+{
+	border-width: 1px;
+	border-color: darkgrey;
+	border-style: solid;
+}
+
+.greenValidate
+{
+	transition: border-color 0.25s linear;
+	border-color: green;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.redInvalid
+{
+	transition: border-color 0.25s linear;
+	border-color: red;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.contact-form-errormessage
+{
+	font-size: 1.4rem;
+	font-weight: 600;
+	float: right;
+}
+
 @include responsiveLayoutMobile()
 {
 	.contact-form
@@ -86,6 +121,12 @@ input[type="submit"]
 	.contact-socialmedia-container img
 	{
 		width: 50px;
+	}
+
+	.contact-form-errormessage
+	{
+		float: none;
+		display: block;
 	}
 
 };

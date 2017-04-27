@@ -3,8 +3,7 @@
   width: 90%;
   height: auto;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
+  @include displayFlex(space-between, none);
 }
 
 .footer-section
