@@ -296,26 +296,26 @@ table {
   float: left;
 }
 
-.contact-form-submit {
-  padding: 1rem;
-  margin: 1rem;
-  font-size: 2rem;
-  border: 0px solid white;
-  cursor: pointer;
+/*
+.contact-form-submit
+{
+	padding: 1rem;
+	margin: 1rem;
+	font-size: 2rem;
+	border: 0px solid white;
+	cursor: pointer;
+	color: #fff; //text kleur
+	background-color: #ff9664; //kleur knop
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
 }
 
-.contact-form-submit {
-  color: #fff;
-  background-color: #ff9664;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
+.contact-form-submit:hover
+{
+	background-color: #ffac87; //kleur wanneer je hovert over knop
 }
-
-.contact-form-submit:hover {
-  background-color: #ffac87;
-}
-
+*/
 textarea {
   resize: none;
   width: 100%;
@@ -356,14 +356,54 @@ input[type="submit"] {
   transition: border-color 0.25s linear;
   border-color: green;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 .redInvalid {
   transition: border-color 0.25s linear;
   border-color: red;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
+}
+
+/*
+#input-submit-button
+{
+	padding: 1rem;
+	margin: 1rem;
+	font-size: 2rem;
+	border: 0px solid white;
+	cursor: pointer;
+	color: #fff; //text kleur
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+}
+
+#input-submit-button:hover
+{
+	background-color: #ffac87; //kleur wanneer je hovert over knop
+}
+*/
+.buttonDisabled, .buttonEnabled {
+  background-color: lightgrey;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+  border: 0px solid white;
+  cursor: pointer;
+  color: #fff;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.buttonEnabled {
+  background-color: #ff9664;
+}
+
+.buttonEnabled:hover {
+  background-color: #ffac87;
 }
 
 .contact-form-errormessage {
@@ -388,7 +428,8 @@ input[type="submit"] {
   }
 
   .contact-form-errormessage {
-    float: none;
+    float: left;
+    font-size: 1.6rem;
     display: block;
   }
 }

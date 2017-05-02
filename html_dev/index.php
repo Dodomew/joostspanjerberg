@@ -97,7 +97,7 @@ if ($_POST) {
 
 		<figure class="header-image">
 
-			<img src="images/header-image-1920.jpg" alt="Joost mentoring girl playing guitar">
+			<img src="images/header-image-1280.jpg" srcset="images/header-image-1920.jpg 1920w, images/header-image-2560.jpg 2560w, images/header-image-3840.jpg 3840w" alt="Joost mentoring girl playing guitar">
 
 		</figure>
 
@@ -231,25 +231,7 @@ if ($_POST) {
 
 					<div class="display-flex">
 
-						<?php
 
-						//$safeGet = htmlspecialchars($_GET["v"]);
-
-						$safeGet = "";
-
-						if (isset($_GET["v"]))
-						{
-							$safeGet = htmlspecialchars($_GET["v"]);
-						}
-
-						if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
-						    {
-
-									if ($safeGet == "false")
-									{
-										echo "<strong>Vul alsjeblieft alle velden in.</strong>";
-									}
-						    ?>
 
 							<section class="contact-form" id="contact-me-form">
 
@@ -257,15 +239,37 @@ if ($_POST) {
 
 							    <input type="hidden" name="action" value="submit">
 
-									<h4>Wat is je emailadres?</h4> <label class="contact-form-errormessage" id="contact-form-emailone-error"></label><br>
+									<h4>Wat is je emailadres?</h4> <br>
 									<input name="emailone" id="emailone" class="contact-form-input-border " type="email" value="" size="30" required placeholder="Voer je emailadres in." onblur="return validateEmail()"/><br>
 
-									<h4>Wat is je email ter controle?</h4> <label class="contact-form-errormessage" id="contact-form-emailtwo-error"></label><br>
+									<h4>Wat is je email ter controle?</h4> <br>
 									<input name="emailtwo" id="emailtwo" class="contact-form-input-border " type="email" value="" size="30" required placeholder="Voer je emailadres nogmaals in." onblur="return validateEmail()"/><br>
+
+									<label class="contact-form-errormessage" id="contact-form-emailtwo-error">
+
+										<?php
+
+										$safeGet = "";
+
+										if (isset($_GET["v"]))
+										{
+											$safeGet = htmlspecialchars($_GET["v"]);
+										}
+
+										if ($safeGet == "" || $safeGet == "false")    /* display the contact form */
+												{
+
+													if ($safeGet == "false")
+													{
+														echo "<strong><u>Vul alsjeblieft een bericht in.</u></strong>";
+													}
+										?>
+
+									</label>
 
 									<h4>Wat kan ik voor je doen?</h4> <br>
 									<textarea name="message" rows="7" cols="30" placeholder="Ik wil graag contact met je!"></textarea><br>
-									<input type="submit" value="Stuur mij een bericht!" class="contact-form-submit"/>
+									<input type="submit" value="Stuur mij een bericht!" class="buttonDisabled" id="input-submit-button" disabled/>
 
 								</form>
 
