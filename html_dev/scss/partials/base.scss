@@ -17,7 +17,7 @@ $max-tablet-nexus-size: 960px;
 
 @mixin displayFlex($justify, $align-items)
 {
-  display: -webkit-box;
+  // display: -webkit-box;  // iPhone fallback set on specific elements, otherwise this gets overwritten by display:flex
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -26,6 +26,27 @@ $max-tablet-nexus-size: 960px;
   justify-content: $justify;
   -webkit-align-items: $align-items;
   align-items: $align-items;
+}
+
+// https://github.com/mastastealth/sass-flex-mixin/blob/master/_flex.scss
+@mixin flex($fg: 1, $fs: null, $fb: null)
+{
+	// Set a variable to be used by box-flex properties
+	$fg-boxflex: $fg;
+
+	// Box-Flex only supports a flex-grow value so let's grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == 'list'
+  {
+		$fg-boxflex: nth($fg, 1);
+	}
+
+	-webkit-box-flex: $fg-boxflex;
+	-webkit-flex: $fg $fs $fb;
+	-moz-box-flex: $fg-boxflex;
+	-moz-flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+	flex: $fg $fs $fb;
 }
 
 /* Mobile phones */

@@ -55,7 +55,7 @@ if ($_POST) {
 
 					<div class="menu-list-item-rightborder">
 
-						<li class="header-menu-list-item"><a href="#home">Home</a></li>
+						<li class="header-menu-list-item"><a href="#main-content-container">Home</a></li>
 
 					</div>
 
@@ -97,11 +97,11 @@ if ($_POST) {
 
 		<figure class="header-image">
 
-			<img src="images/header-image-1280.jpg" srcset="images/header-image-1920.jpg 1920w, images/header-image-2560.jpg 2560w, images/header-image-3840.jpg 3840w" alt="Joost mentoring girl playing guitar">
+			<img src="images/header-image-1280.jpg" srcset="images/header-image-768.jpg 768w, images/header-image-1920.jpg 1920w, images/header-image-2560.jpg 2560w, images/header-image-3840.jpg 3840w" alt="Joost mentoring girl playing guitar">
 
 		</figure>
 
-		<main class="main-content-container">
+		<main class="main-content-container" id="main-content-container">
 
 			<section class="main-content-section-container">
 
@@ -115,7 +115,7 @@ if ($_POST) {
 
 					<figure class="section-container-image">
 
-						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+						<img src="images/content-image-01-1024.jpg" srcset="images/content-image-01-768.jpg 768w, images/content-image-01-512.jpg 512w, images/content-image-01-256.jpg 256w" alt="Joost standing in front of a blue frontdoor">
 
 					</figure>
 
@@ -143,7 +143,7 @@ if ($_POST) {
 
 					<figure class="section-container-image">
 
-						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+						<img src="images/content-image-01-1024.jpg" srcset="images/content-image-01-768.jpg 768w, images/content-image-01-512.jpg 512w, images/content-image-01-256.jpg 256w" alt="Joost standing in front of a blue frontdoor">
 
 					</figure>
 
@@ -201,7 +201,7 @@ if ($_POST) {
 
 					<figure class="section-container-image">
 
-						<img src="images/section-content-side-image-1024.jpg" alt="Joost standing in front of a blue frontdoor">
+						<img src="images/content-image-01-1024.jpg" srcset="images/content-image-01-768.jpg 768w, images/content-image-01-512.jpg 512w, images/content-image-01-256.jpg 256w" alt="Joost standing in front of a blue frontdoor">
 
 					</figure>
 
@@ -231,11 +231,9 @@ if ($_POST) {
 
 					<div class="display-flex">
 
-
-
 							<section class="contact-form" id="contact-me-form">
 
-						    <form action="index.php" method="POST" enctype="multipart/form-data">
+						    <form action="index.php#contact" method="POST" enctype="multipart/form-data">
 
 							    <input type="hidden" name="action" value="submit">
 
@@ -263,6 +261,19 @@ if ($_POST) {
 													{
 														echo "<strong><u>Vul alsjeblieft een bericht in.</u></strong>";
 													}
+										}
+										else                /* send the submitted data */
+												{
+
+														if($safeGet == "true")
+														{
+															echo "<strong>Je bericht is verstuurd!</strong>";
+														}
+														else {
+															echo "<strong>Er is iets fout gegaan! Vul het formulier alsjeblieft opnieuw in.</strong>";
+														}
+
+												}
 										?>
 
 									</label>
@@ -273,21 +284,6 @@ if ($_POST) {
 
 								</form>
 
-						    <?php
-						    }
-						else                /* send the submitted data */
-						    {
-
-										if($safeGet == "true")
-										{
-											echo "<strong>Je bericht is verstuurd!</strong>";
-										}
-										else {
-											echo "<strong>Er is iets fout gegaan! Vul het formulier alsjeblieft opnieuw in.</strong>";
-										}
-
-						    }
-						?>
 
 					</section>
 
@@ -296,7 +292,7 @@ if ($_POST) {
 					<header><h1>Vind mij op sociale media!</h1></header>
 
 					<figure class="contact-socialmedia-icons"><a href="https://www.facebook.com/joost.spanjerberg?fref=ts" target="_blank"><img src="images/facebook-logo-color.svg" alt="Facebook icon"></img></a></figure>
-					<figure class="contact-socialmedia-icons"><a href=""><img src="images/instagram-logo-color.svg" alt="Instagram icon"></img></a></figure>
+					<figure class="contact-socialmedia-icons"><a href=""><img src="images/Instagram_logo_2016-coloured.svg" alt="Instagram icon"></img></a></figure>
 					<figure class="contact-socialmedia-icons"><a href=""><img src="images/youtube-logo-color.svg" alt="Youtube icon"></img></a></figure>
 					<figure class="contact-socialmedia-icons"><a href=""><img src="images/soundcloud-logo-color.svg" alt="SoundCloud icon"></img></a></figure>
 

@@ -28,28 +28,50 @@ function validateEmail()
   var sanitizedEmailOne = escapeHtml(emailOneInputLowerCase);
   var sanitizedEmailTwo = escapeHtml(emailTwoInputLowerCase);
 
+  var emailOneAtSign = sanitizedEmailOne.indexOf('@');
+  var emailTwoAtSign = sanitizedEmailTwo.indexOf('@');
+
   if(sanitizedEmailOne != "" && sanitizedEmailTwo != "")
   {
     emailOneInputUser.className = "";
     emailTwoInputUser.className = "";
     submitButton.className = "buttonDisabled";
 
-    if(sanitizedEmailOne === sanitizedEmailTwo)
+    if(emailOneAtSign !== -1 && emailTwoAtSign !== -1)
     {
-      emailOneInputUser.className += "greenValidate";
-      emailTwoInputUser.className += "greenValidate";
-      messageEmailTwo.innerHTML = "";
-      submitButton.disabled = false;
-      submitButton.className = "buttonEnabled";
+      if(sanitizedEmailOne === sanitizedEmailTwo)
+      {
+        emailOneInputUser.className = "greenValidate";
+        emailTwoInputUser.className = "greenValidate";
+        messageEmailTwo.innerHTML = "";
+        submitButton.disabled = false;
+        submitButton.className = "buttonEnabled";
+      }
+      else
+      {
+          emailOneInputUser.className = "redInvalid";
+          emailTwoInputUser.className = "redInvalid";
+          messageEmailTwo.innerHTML = "Je emailadres komt niet overeen!";
+          submitButton.disabled = true;
+          submitButton.className = "buttonDisabled";
+      }
     }
     else
     {
-        emailOneInputUser.className += "redInvalid";
-        emailTwoInputUser.className += "redInvalid";
-        messageEmailTwo.innerHTML = "Je emailadres komt niet overeen!";
-        submitButton.disabled = true;
-        submitbutton.className = "buttonDisabled";
+      emailOneInputUser.className = "redInvalid";
+      emailTwoInputUser.className = "redInvalid";
+      messageEmailTwo.innerHTML = "Je mist een @ in je emailadres.";
+      submitButton.disabled = true;
+      submitButton.className = "buttonDisabled";
     }
+  }
+  else
+  {
+    emailOneInputUser.className = "";
+    emailTwoInputUser.className = "";
+    messageEmailTwo.innerHTML = "";
+    submitButton.disabled = true;
+    submitButton.className = "buttonDisabled";
   }
 }
 
